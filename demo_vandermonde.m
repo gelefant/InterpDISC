@@ -170,7 +170,7 @@ if do_plot
     semilogy(degSet,LebCon,'-o','Color',[142,0,0]/255,'LineWidth',1.5);
     hold on;
     if type_centers == 1 || type_centers == 2
-        semilogy(degSet,LebCon(1)*degSet.^(1/2),'-o','Color',[0,142,142]/255,'LineWidth',1.5)
-        semilogy(degSet,LebCon(1)*degSet,'-o','Color',[142,142,142]/255,'LineWidth',1.5)
+        semilogy(degSet,LebCon(1)*degSet.^(1/2),'--','Color',[142,142,142]/255,'LineWidth',1.5)
+        semilogy(degSet,LebCon(1)*degSet,'--','Color',[142,142,142]/255,'LineWidth',1.5)
     end
 end
