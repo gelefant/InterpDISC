@@ -24,10 +24,10 @@ function demo_interpolant_orb
 % Parameters 
 degSet = [1:20];
 do_plot = 1;
-intersection = 0; % 0 - no intersection, 1 - fixed radmax, 2 - caos 
-typeset_rho = 4; % 1 - rand, 2 - ordered rand, 3 - equispaced, 4 - cheby
+intersection = 2; % 0 - no intersection, 1 - fixed radmax, 2 - caos 
+typeset_rho = 3; % 1 - rand, 2 - ordered rand, 3 - equispaced, 4 - cheby
 type_fun = 1;
-RadMaxDiscs = 0; % 0 - fixed radius, 1 - random radius
+RadMaxDiscs = 1; % 0 - fixed radius, 1 - random radius
 %--------------------------------------------------------------------------
 
 
@@ -103,7 +103,7 @@ end
 if RadMaxDiscs == 0
     radii_orb = Rmax.*ones(NOrb,1);
 else
-    radii_orb = Rmax*rand(NOrb,1);
+    radii_orb = Rmax.*rand(NOrb,1);
 end
 
 radii = [];
@@ -171,8 +171,8 @@ end
 
 if do_plot
     figure(5)
-%     semilogy(degSet,err,'-o','Color',[0,142,142]/255,'LineWidth',1.5) % blue
-    semilogy(degSet,err,'-o','Color',[142,0,0]/255,'LineWidth',1.5) % red
+    semilogy(degSet,err,'-o','Color',[0,142,142]/255,'LineWidth',1.5) % blue
+%     semilogy(degSet,err,'-o','Color',[142,0,0]/255,'LineWidth',1.5) % red
 %     semilogy(degSet,err,'-o','Color',[142,142,0]/255,'LineWidth',1.5) % mustard
     hold on;
 end
