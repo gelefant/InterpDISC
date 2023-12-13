@@ -26,7 +26,8 @@ degSet = [1:20];
 do_plot = 1;
 intersection = 0; % 0 - no intersection, 1 - fixed radmax, 2 - caos 
 typeset_rho = 4; % 1 - rand, 2 - ordered rand, 3 - equispaced, 4 - cheby
-type_fun = 2;
+type_fun = 1;
+RadMaxDiscs = 0; % 0 - fixed radius, 1 - random radius
 %--------------------------------------------------------------------------
 
 
@@ -99,8 +100,11 @@ else
     Rmax = min(Rmax,2*pi/(2*dimPdisk(1)+2));
 end
 
-% radii_orb = Rmax*rand(NOrb,1);
-radii_orb = Rmax.*ones(NOrb,1);
+if RadMaxDiscs == 0
+    radii_orb = Rmax.*ones(NOrb,1);
+else
+    radii_orb = Rmax*rand(NOrb,1);
+end
 
 radii = [];
 for i = 1:NOrb
