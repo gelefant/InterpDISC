@@ -150,7 +150,7 @@ fprintf('\n \t ratio cond        : %2.3e',condVmon(h)/condVcheb(h))
 fprintf('\n...................................................')
 
 % Lebesgue constant computation
-LebCon(h) = LebesgueConstant(deg,centers,radii);
+LebCon(h) = LebesgueConstant2(deg,centers,radii);
 
 
 fprintf('\n \t Leb constant      : %2.3e',LebCon(h))
